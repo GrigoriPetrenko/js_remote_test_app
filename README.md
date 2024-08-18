@@ -1,78 +1,89 @@
-# js_remote_test_app
 
+This is a simple to-do list application. The app is built using JavaScript and is intended to help users manage their tasks effectively. This project is designed to be easily deployable and maintainable.
 
-## How to Run
+## Table of Contents
+
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Project Structure
+
+The project follows a clean and organized structure to separate concerns and improve maintainability. Below is the structure of the project:
+
+│   ├── index.html          # Main HTML file
+│   ├── style.css           # CSS file
+│   └── assets/             # Additional assets like images
+│
+├── src/                    # Source files (JavaScript)
+│   └── app.js              # Main JavaScript file
+│
+├── scripts/                # Scripts for setup and installation
+│   └── install.ps1         # PowerShell script for Node.js installation and setup
+│
+├── .gitignore              # Git ignore file
+└── README.md               # Project documentation
+`
+
+## Installation
+
+To set up this project on your local machine, follow the steps below:
 
 ### Prerequisites
 
-- Windows 11
-- [Git](https://git-scm.com/downloads) installed on your machine
-- Administrator privileges for installing software
+- Ensure you have **Node.js v20.16.0** or a compatible version installed. You can verify the installed version using:
 
-### Steps to Run the Application
+  ```bash
+  node -v
+  ```
 
-1. **Clone the Repository:**
+### Steps
 
-   Open a terminal and run the following command:
+1. **Clone the Repository**:
 
    ```bash
    git clone https://github.com/GrigoriPetrenko/js_remote_test_app.git
-   ```
-
-2. **Navigate to the Project Directory:**
-
-   ```bash
    cd js_remote_test_app
    ```
 
-3. **Run the PowerShell Installation Script:**
+2. **Install Node.js and Dependencies**:
 
-   This script will:
-   - Check if Node.js is installed and whether it matches the required version (`20.16.0`).
-   - Download and install the required version of Node.js if it's not already installed.
-   - Run the `hello.js` application.
-
-   **To run the script:**
-
-   - Open **PowerShell** as Administrator.
-   - Navigate to the project directory.
-   - Run the following command:
-
-     ```powershell
-     ./install.ps1
-     ```
-
-4. **Output:**
-
-   If everything is set up correctly, you should see the output:
-
-   ```text
-   Hello, World!
-   ```
-
-### Troubleshooting
-
-#### Script Execution Policy
-
-If you encounter an error related to script execution policies when running `install.ps1`, follow these steps:
-
-1. Open PowerShell as Administrator.
-2. Temporarily allow script execution by running:
+   If Node.js is not installed or if you want to ensure you have the correct version, run the installation script:
 
    ```powershell
-   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+   .\scripts\install.ps1
    ```
 
-3. Run the installation script:
+   This script will check for Node.js installation, install it if necessary, or update it to the correct version.
 
-   ```powershell
-   ./install.ps1
+3. **Install Project Dependencies**:
+
+   After ensuring Node.js is installed, install the required npm packages:
+
+   ```bash
+   npm install
    ```
 
-4. If you prefer to allow script execution permanently, use:
+## Usage
 
-   ```powershell
-   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-   ```
+Once the setup is complete, you can start the application by opening the `index.html` file in your browser.
 
-After running the script, the required version of Node.js will be installed, and the application will execute.
+### Running the Application
+
+- Simply open `public/index.html` in your preferred web browser to use the to-do list app.
+
+## Contributing
+
+Contributions are welcome! If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
